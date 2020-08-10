@@ -2,7 +2,7 @@
  * @author PragunMehta
  * 
  */
-package com.mod.web;
+package com.demo.controller;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mod.exception.RecordNotFoundException;
-import com.mod.model.Vehicle;
-import com.mod.service.VehicleService;
+import com.demo.exception.RecordNotFoundException;
+import com.demo.model.Vehicle;
+import com.demo.service.VehicleService;
 
 /**
  * Vehicle Controller class

@@ -2,12 +2,12 @@
  * @author PragunMehta
  * 
  */
-package com.mod.repository;
+package com.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.mod.model.Vehicle;
+import com.demo.model.Vehicle;
 
 /**
  * Vehicle Service class 

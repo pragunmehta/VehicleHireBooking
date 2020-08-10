@@ -2,7 +2,7 @@
  * @author PragunMehta
  * 
  */
-package com.mod.model;
+package com.demo.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

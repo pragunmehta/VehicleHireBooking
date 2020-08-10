@@ -2,7 +2,7 @@
  * @author PragunMehta
  * 
  */
-package com.mod.exception;
+package com.demo.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

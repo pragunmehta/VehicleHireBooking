@@ -2,13 +2,13 @@
  * @author PragunMehta
  * 
  */
-package com.mod.service;
+package com.demo.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.mod.model.Vehicle;
+import com.demo.model.Vehicle;
 
 /**
  * Vehicle Service class
