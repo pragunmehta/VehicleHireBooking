@@ -37,8 +37,9 @@ import com.demo.service.VehicleService;
 class VehicleControllerTest {
 
 	private static final String JSON_RESPONSE_GET_VEHICLE_COST = 
-			"The Vehicle BMW Z4 Petrol Small car Registration Number "
-			+ "REG-7 hiring cost for the 30 days from date 2020-01-01 to date 2020-01-31 is £750";
+			"{\"Category\":\"Small car\",\"Fuel\":\"Petrol\",\"From Date\":\"2020-01-01\","
+			+ "\"Model\":\"Z4\",\"Registration Number\":\"REG-7\",\"Make\":\"BMW\","
+			+ "\"To Date\":\"2020-01-31\",\"TOTAL COST\":\"750\"}";
 	private static final String JSON_RESPONSE_GET_VEHICLE_BY_REGISTRATION_NUMBER = 
 			"{\"id\":7,\"registrationNumber\":\"REG-7\",\"make\":\"BMW\",\"model\":\"Z4\","
 			+ "\"fuel\":\"Petrol\",\"category\":\"Small car\",\"pricePerDay\":25,"
@@ -116,11 +117,11 @@ class VehicleControllerTest {
 	}
 
 	/**
-	 * Test VehicleController method GetVehicleCost()
+	 * Test VehicleController method getVehicleCostToHire()
 	 */
 	@Test
-	@DisplayName("Test VehicleController.GetVehicleCost()")
-	void testGetVehicleCost() throws Exception {
+	@DisplayName("Test VehicleController.getVehicleCostToHire()")
+	void testGetVehicleCostToHire() throws Exception {
 		when(service.getVehicleByRegistrationNumber("REG-7")).thenReturn(createVehicle());
 		mockMvc.perform(get("/vehicles/REG-7/2020-01-01/2020-01-31"))
 			.andExpect(status().isOk())

@@ -2,7 +2,7 @@
  * @author PragunMehta
  * 
  */
-package com.demo.service;
+package com.demo.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.demo.model.Vehicle;
 import com.demo.repository.VehicleRepository;
+import com.demo.service.VehicleService;
 
 /**
  * Vehicle Service Implementation class

@@ -20,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.demo.model.Vehicle;
 import com.demo.repository.VehicleRepository;
+import com.demo.service.impl.VehicleServiceImpl;
 
 /**
  * @author PragunMehta

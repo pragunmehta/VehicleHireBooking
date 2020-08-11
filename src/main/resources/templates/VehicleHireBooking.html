@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vehicle Hire Booking Application</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv" class="main-div">
+		<div id="vehicleTest" class="left-div">
+			<p align="left"><b>Vehicle Hire</b></p>
+			<img src="images/care_hire.png"></img>
+			<p align="left"><b>Booking System</b></p>
+			<br/><br/><br/>
+			<button id="allVehicles" onclick="getAllVehicles()" class="button">All Vehicles</button>
+			<br/><br/><br/>
+			<button id="vehiclesToHire" onclick="getVehiclesToHire()" class="button">Vehicles To Hire</button>
+			<br/><br/><br/>
+			<button id="vehicleHireCost" onclick="getVehicleHireCost()" class="button">Vehicle Hire Cost</button>
+			<br/><br/><br/>
+            <button id="vehicleNotFoundMessage" onclick="getVehicleNotFoundMessage()" class="button">Vehicle Not Found</button>
+		</div>
+		<div id="vehicleJosn" class="right-div">
+	   </div>
+	</div>
+</body>
+</html>

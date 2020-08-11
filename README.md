@@ -37,24 +37,18 @@
 	   
      - The Spring Boot application will start in console
 
- (5) Test different Scenarios by typing following URL to the browser
+ (5) Test different Scenarios by accessin application from the browser
  
-  	 (A) Get all the Vehicles which are available to hire
-         http://localhost:8080/vehicles/hire
+     URL : http://localhost:8080
+ 
+     (A) Get all the Vehicles hired / not hired
+	 
+  	 (B) Get all the Vehicles which are available to hire
 		 
-	 (B) Get cost of the specific Vehicle by giving Registratoin Number and Hire From Date / Hire To Date
-         http://localhost:8080/vehicles/REG-4/2020-01-01/2020-01-31
+	 (B) Get cost of a specific Vehicle by Registratoin Number and Hire From Date / Hire To Date
 		 
-     (C) Get all the Vehicles hired and not hired
-         http://localhost:8080/vehicles/all
+	 (E) Get Vehicle by Registratoin Number
 		 
-	 (D) Type incorrect URL to get Not Found status 404 
-	     http://localhost:8080/XXXXXXX
-		 
-	 (E) Get Vehicle by giving Registratoin Number
-         http://localhost:8080/vehicles/REG-4
-		 
-	 (F) Get Vehicle Not Found Exception by giving incorrect Registratoin Number
-	     http://localhost:8080/vehicles/XXXXXXX
+	 (F) Get Vehicle Not Found Exception for incorrect Registratoin Number
 		 
 

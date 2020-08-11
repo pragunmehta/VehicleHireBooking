@@ -1,0 +1,29 @@
+.main-div {
+	display: block;
+	width: 100%;
+}
+
+.left-div {
+	width: 20%;
+	float: left;
+	display: inline-block;
+}
+
+.right-div {
+	width: 80%;
+	float: right;
+	display: inline-block;
+}
+
+.button {
+	background-color: #ffc68c;
+	border: none;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 16px;
+}
