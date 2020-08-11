@@ -5,6 +5,7 @@
 package com.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -25,11 +26,11 @@ public interface VehicleService {
 	/**
 	 * @return the List of all the Vehicles available to Hire
 	 */
-	public List<Vehicle> getAllVehiclesToHire();
+	public List<Vehicle> getVehiclesToHire();
 
 	/**
 	 * @return the Vehicle by registration number
 	 */
-	public Vehicle getVehicleByRegistrationNumber(String registrationNumber);
+	public Optional<Vehicle> getVehicleByRegistrationNumber(String registrationNumber);
 
 }

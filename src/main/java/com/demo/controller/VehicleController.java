@@ -7,8 +7,8 @@ package com.demo.controller;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,8 +30,14 @@ import com.demo.service.VehicleService;
 @RequestMapping("/vehicles")
 public class VehicleController {
 
-	@Autowired
-	VehicleService vehicleService;
+	private VehicleService vehicleService;
+
+	/**
+	 * @param VehicleService vehicleService
+	 */
+	public VehicleController(VehicleService vehicleService) {
+		this.vehicleService = vehicleService;
+	}
 
 	/**
 	 * @return the List of all Vehicles
@@ -51,7 +57,7 @@ public class VehicleController {
 	 */
 	@GetMapping("/hire")
 	public ResponseEntity<List<Vehicle>> getAllVehiclesToHire() {
-		List<Vehicle> vehiclesToHire = vehicleService.getAllVehiclesToHire();
+		List<Vehicle> vehiclesToHire = vehicleService.getVehiclesToHire();
 		if (CollectionUtils.isEmpty(vehiclesToHire)) {
 			throw new RecordNotFoundException("No Vehicle is available to hire.");
 		}
@@ -65,12 +71,12 @@ public class VehicleController {
 	public ResponseEntity<Vehicle> getVehicleByRegistrationNumber(
 			@PathVariable("registrationNumber") String registrationNumber) {
 		// get Vehicle
-		Vehicle vehicle = vehicleService.getVehicleByRegistrationNumber(registrationNumber);
-		if (vehicle == null) {
+		Optional<Vehicle> vehicle = vehicleService.getVehicleByRegistrationNumber(registrationNumber);
+		if (vehicle.isEmpty()) {
 			throw new RecordNotFoundException(
 					String.format("Vehicle with Registration Number %s not found", registrationNumber));
 		}
-		return new ResponseEntity<Vehicle>(vehicle, new HttpHeaders(), HttpStatus.OK);
+		return new ResponseEntity<Vehicle>(vehicle.get(), new HttpHeaders(), HttpStatus.OK);
 	}
 
 	/**
@@ -80,12 +86,13 @@ public class VehicleController {
 	public String getVehicleCost(@PathVariable("registrationNumber") String registrationNumber,
 			@PathVariable("fromDate") String fromDate, @PathVariable("toDate") String toDate) {
 		// get Vehicle
-		Vehicle vehicle = vehicleService.getVehicleByRegistrationNumber(registrationNumber);
-		if (vehicle == null) {
+		Optional<Vehicle> vehicleByRegistrationNumber = vehicleService.getVehicleByRegistrationNumber(registrationNumber);
+		if (vehicleByRegistrationNumber.isEmpty()) {
 			throw new RecordNotFoundException(
 					String.format("Vehicle with Registration Number %s not found", registrationNumber));
 		}
 		// calculate cost for requested date range
+		Vehicle vehicle = vehicleByRegistrationNumber.get();
 		long daysToHire = LocalDate.parse(fromDate).datesUntil(LocalDate.parse(toDate)).count();
 		BigDecimal vehicleHireCost = vehicle.getPricePerDay().multiply(new BigDecimal(daysToHire));
 		return String.format(

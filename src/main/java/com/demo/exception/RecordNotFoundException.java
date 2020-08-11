@@ -20,7 +20,4 @@ public class RecordNotFoundException extends RuntimeException {
 		super(message);
 	}
 
-	public RecordNotFoundException(String message, Throwable t) {
-		super(message, t);
-	}
 }

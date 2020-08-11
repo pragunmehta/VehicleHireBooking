@@ -23,7 +23,7 @@ import javax.persistence.Table;
 public class Vehicle {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "REGISTRATION_NUMBER", unique = true, nullable = false)
@@ -73,8 +73,25 @@ public class Vehicle {
 	 */
 	public Vehicle(Long id, String registrationNumber, String make, String model, String fuel, String category,
 			BigDecimal pricePerDay, String customer, LocalDate hireStartDate, LocalDate hireEndDate) {
-		super();
+		this(registrationNumber, make, model, fuel, category, pricePerDay, customer, hireStartDate, hireEndDate);
 		this.id = id;
+	}
+	
+	/**
+	 * @param id
+	 * @param registrationNumber
+	 * @param make
+	 * @param model
+	 * @param fuel
+	 * @param category
+	 * @param pricePerDay
+	 * @param customer
+	 * @param hireStartDate
+	 * @param hireEndDate
+	 */
+	public Vehicle(String registrationNumber, String make, String model, String fuel, String category,
+			BigDecimal pricePerDay, String customer, LocalDate hireStartDate, LocalDate hireEndDate) {
+		super();
 		this.registrationNumber = registrationNumber;
 		this.make = make;
 		this.model = model;
@@ -85,7 +102,6 @@ public class Vehicle {
 		this.hireStartDate = hireStartDate;
 		this.hireEndDate = hireEndDate;
 	}
-	
 	/**
 	 * @return the id
 	 */
