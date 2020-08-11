@@ -9,22 +9,25 @@ Vehicle Hire Booking System
      https://github.com/pragunmehta/VehicleHireBooking 
 	 to your local machine and extract it to C:\demo
  
- (3) Run the application 
-     - Go to Windows command prompt C:\demo\VehicleHireBooking
+ (3) Run Test Cases
+     - Go to Windows command prompt C:\demo\VehicleHireBooking-master
+     - Run following command 
+       mvnw.cmd test
+	 - All the Test cases should run successfully displaying following results in Concole
+	   "Tests run: 12, Failures: 0, Errors: 0, Skipped: 0"
+     - Test Results stored under the folder 
+	   C:\apps\workspace_git\VehicleHireBooking\target\surefire-reports
+	 - Test case of the project are follows 
+	   under the folder C:\demo\VehicleHireBooking-master\src\test\java\com\demo\
+	   (A) controller\VehicleControllerTest.java
+	   (B) repository\VehicleServiceTest.java
+	   (C) service\VehicleRepositoryTest.java
+
+ (4) Run the application 
+     - Go to Windows command prompt C:\demo\VehicleHireBooking-master
      - Run following command 
        mvnw.cmd spring-boot:run
      - The Spring Boot application will start in console
-     
- (4) Run Test Cases
-     - Go to Windows command prompt C:\demo\VehicleHireBooking
-     - Run following command 
-       mvnw.cmd test
-     - Test Results stored under the folder 
-	   C:\apps\workspace_git\VehicleHireBooking\target\surefire-reports
-	 - Test case of the project are follows
-	   (A) VehicleControllerTest.java
-	   (B) VehicleServiceTest.java
-	   (C) VehicleRepositoryTest.java
 
  (5) Test different Scenarios by typing following URL to the browser
   	 (A) Get all the Vehicles which are available to hire
