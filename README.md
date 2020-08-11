@@ -5,13 +5,15 @@ Vehicle Hire Booking System
  
  (1) Prerequisite : Java Runtime Environment must be installed on your machine
  
- (2) Download Project Source Zip from the GIT Hub Repository 
-     https://github.com/pragunmehta/VehicleHireBooking 
-	 to your local machine and extract it to C:\demo
+ (2) Download Project Source Zip 
+ 
+     From : GIT Hub Repository https://github.com/pragunmehta/VehicleHireBooking 
+	 To : Your local machine and extract it to say C:\demo
  
  (3) Run Test Cases
  
-     - Go to Windows command prompt C:\demo\VehicleHireBooking-master
+     - Go to Windows command prompt
+	   C:\demo\VehicleHireBooking-master
 	 
      - Run following command 
 	   mvnw.cmd test
