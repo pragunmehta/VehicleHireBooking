@@ -1,5 +1,4 @@
-========================================================================================================
-Vehicle Hire Booking System
+# VehicleHireBooking System
 ========================================================================================================
  
  (1) Prerequisite : Java Runtime Environment must be installed on your machine
