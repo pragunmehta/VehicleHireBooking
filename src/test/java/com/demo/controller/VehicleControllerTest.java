@@ -37,9 +37,9 @@ import com.demo.service.VehicleService;
 class VehicleControllerTest {
 
 	private static final String JSON_RESPONSE_GET_VEHICLE_COST = 
-			"{\"Category\":\"Small car\",\"Fuel\":\"Petrol\",\"From Date\":\"2020-01-01\","
-			+ "\"Model\":\"Z4\",\"Registration Number\":\"REG-7\",\"Make\":\"BMW\","
-			+ "\"To Date\":\"2020-01-31\",\"TOTAL COST\":\"750\"}";
+			"{\"Make\":\"BMW\",\"Model\":\"Z4\",\"Fuel\":\"Petrol\",\"Category\":\"Small car\","
+			+ "\"Registration Number\":\"REG-7\",\"From Date\":\"2020-01-01\",\"To Date\":\"2020-01-31\","
+			+ "\"TOTAL COST\":\"£750\"}";
 	private static final String JSON_RESPONSE_GET_VEHICLE_BY_REGISTRATION_NUMBER = 
 			"{\"id\":7,\"registrationNumber\":\"REG-7\",\"make\":\"BMW\",\"model\":\"Z4\","
 			+ "\"fuel\":\"Petrol\",\"category\":\"Small car\",\"pricePerDay\":25,"
