@@ -5,11 +5,10 @@ function getAllVehicles() {
         dataType: 'json',
         cache: false,
         success: function (data) {
-            var count = Object.keys(data).length;
-            var json = "<P><b>*****  Get Al Vehicles   *****<br/>"
-                + "<br/>Total Vehicles : "+count+"</b></p><pre>"
-                + JSON.stringify(data, null, 4) + "</pre>";
-            $('#vehicleJosn').html(json);
+            $('#vehicleJosn').html(
+               "<P><b>*****  Get Al Vehicles   *****<br/>"
+               + "<br/>Total Vehicles : "+Object.keys(data).length+"</b></p>"
+               .concat(buildJsonTable(data)));
         },
     });
 }
@@ -22,10 +21,10 @@ function getVehiclesToHire() {
         cache: false,
         success: function (data) {
             var count = Object.keys(data).length;
-            var json = "<P><b>*****  Get Al available Vehicles to hire   *****<br/>"
-                + "<br/>Total Vehicles : "+count+"</b></p><pre>"
-                + JSON.stringify(data, null, 4) + "</pre>";
-            $('#vehicleJosn').html(json);
+            $('#vehicleJosn').html(
+               "<P><b>*****  Get Al available Vehicles to hire   *****<br/>"
+               + "<br/>Total Vehicles : "+Object.keys(data).length+"</b></p>"
+               .concat(buildJsonTable(data)));
         },
     });
 }
@@ -54,4 +53,23 @@ function getVehicleNotFoundMessage() {
             $('#vehicleJosn').html(json);
         }
     });
+}
+
+function buildJsonTable(data) {
+    var keys = [];
+    var table = "";
+    table = table.concat("<table border==\"1\"><tr>");
+    for (key in data[0]) {
+        table = table.concat('<td>' + key + '</td>');
+    }
+    table = table.concat("</tr>");
+    for (var i = 0; i < data.length; i++) {
+        table = table.concat('<tr>');
+        for (key in data[i]) {
+        table = table.concat('<td>' + data[i][key] + '</td>');
+      }
+        table = table.concat('</tr>');
+    }
+    table = table.concat("</table>");
+    return table;
 }
