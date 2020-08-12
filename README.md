@@ -28,7 +28,7 @@
 	   (B) repository\VehicleServiceTest.java
 	   (C) service\VehicleRepositoryTest.java
 	   
- (4) Run the application 
+ (4) Run the Application 
  
      - Go to Windows command prompt C:\demo\VehicleHireBooking-master
 	 
@@ -37,7 +37,7 @@
 	   
      - The Spring Boot application will start in console
 
- (5) Test different Scenarios by accessin application from the browser
+ (5) Test different scenarios by accessing the application from the browser
  
      URL : http://localhost:8080
  
